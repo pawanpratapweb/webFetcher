@@ -5,6 +5,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   request(req.query.url, function (error, response, body) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.send(body);
   });
 })
